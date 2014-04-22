@@ -12,7 +12,7 @@ fnums = aa(a(1:ni));
 ii_ims = [];
 
 for i=1:ni
-    ii_im = LoadIm([[dirname,'/'],face_fnames(fnums(i)).name]);
+    [im,ii_im] = LoadIm([[dirname,'/'],face_fnames(fnums(i)).name]);
     ii_ims = [ii_ims;ii_im(:)'];
 end
 
