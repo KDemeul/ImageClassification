@@ -7,6 +7,7 @@ close all
 % addpath('TrainingImages/FACES')
 % addpath('TrainingImages/NFACES')
 
+
 %% DEBUG POINTS
 
 % DEBUG POINT 1
