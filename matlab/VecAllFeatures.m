@@ -6,7 +6,7 @@ all_size = size(all_ftypes);
 fmat = zeros(W*H,all_size);
 
 for i=1:all_size
-    fmat(:,i) = VecFeature(all_ftypes(i),W,H);
+    fmat(:,i) = VecFeature(all_ftypes(i,:),W,H);
 end
 
 end
