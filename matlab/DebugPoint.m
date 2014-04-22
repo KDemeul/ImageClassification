@@ -10,7 +10,7 @@ close all
 %% DEBUG POINTS
 
 % DEBUG POINT 1
-[ii,ii_im] = LoadIm('TrainingImages/FACES/face00001.bmp');
+[im,ii_im] = LoadIm('TrainingImages/FACES/face00001.bmp');
 
 dinfo1 = load('DebugInfo/debuginfo1.mat');
 eps = 1e-6;
