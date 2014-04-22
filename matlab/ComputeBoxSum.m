@@ -1,8 +1,6 @@
 function A = ComputeBoxSum(ii_im, x, y, w, h)
-%ComputeBoxSum computes the sum of the pixel values within a rectangular area using the integral image.
-
-new_ii = ii_im(y:y+h-1,x:x+w-1);
-A = sum(sum(new_ii,2),1);
+%ComputeBoxSum computes the sum of the pixel values within a rectanglar area using the integral image.
+A = ii_im(y+h-1,x+w-1)+ii_im(y-1,x-1)-ii_im(y-1,x+w-1)-ii_im(y+h-1,x-1);
 
 end
 
