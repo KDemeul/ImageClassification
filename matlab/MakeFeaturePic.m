@@ -7,14 +7,14 @@ h = ftype(5);
 
 switch type
     case 1,
-        pic = [-ones(w,h);ones(w,h)];
+        pic = [-ones(h,w);ones(h,w)];
     case 2,
-        pic = [ones(w,h),-ones(w,h)];
+        pic = [ones(h,w),-ones(h,w)];
     case 3,
-        pic = [ones(w,h),-ones(w,h),ones(w,h)];
+        pic = [ones(h,w),-ones(h,w),ones(h,w)];
     otherwise,
-        pic = [ones(w,h), -ones(w,h);
-               -ones(w,h), ones(w,h)];
+        pic = [ones(h,w), -ones(h,w);
+               -ones(h,w), ones(h,w)];
 end
 
 [hpic,wpic] = size(pic);
