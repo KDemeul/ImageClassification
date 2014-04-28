@@ -6,7 +6,7 @@ Nfeat = 1000;
 
 %%%%%%%%%%%% INITIALIZATION %%%%%%%%%%%%
 ys = [ones(Nf,1);zeros(Nnf,1)];
-ws = [1/(2*Nf)*ones(Nf11);
+ws = [1/(2*Nf)*ones(Nf,1);
     1/(2*Nnf)*ones(Nnf,1)];
 err_min = 1e100;
 fs_min = 0;
@@ -41,7 +41,7 @@ for t = 1:T
     
     % UPDATE WEIGHT
     beta = err_min/(1-err_min);
-    coef = beta^(1-abs(double(p_min*fs_min < p_min*theta_min)-ys));
+    coef = beta.^(1-abs(double(p_min*fs_min < p_min*theta_min)-ys));
     ws = ws.*coef;
     
     % UPDATE Cparams
