@@ -4,10 +4,12 @@ function cpic = MakeClassifierPic(all_ftypes, chosen_f, alphas, ps, W, H)
 
 cpic = zeros(H,W);
 fpic = zeros(H,W,size(chosen_f,1));
-for i=1:size(chosen_f,1)
+for i=1:size(chosen_f,2)
     fpic(:,:,i) = MakeFeaturePic(all_ftypes(chosen_f(i),:),W,H);
 end
-cpic = sum(alphas.*ps.*fpic);
+for i=1:size(alphas,2)
+    cpic = cpic + alphas(i)*ps(i)*fpic(:,:,i);
+end
 
 end
 
