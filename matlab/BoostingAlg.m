@@ -1,8 +1,7 @@
 function Cparams = BoostingAlg(Fdata, NFdata, FTdata, T)
 Nf = size(Fdata.ii_ims,1);
 Nnf = size(NFdata.ii_ims,1);
-% Nfeat = size(FTdata.all_ftypes,1);
-Nfeat = 1000;
+Nfeat = size(FTdata.all_ftypes,1);
 
 %%%%%%%%%%%% INITIALIZATION %%%%%%%%%%%%
 ys = [ones(Nf,1);zeros(Nnf,1)];
