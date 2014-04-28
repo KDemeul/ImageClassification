@@ -46,7 +46,7 @@ for t = 1:T
     
     % UPDATE Cparams
     Cparams.alphas(t) = - log(beta);
-    Cparams.Thetas(t,:) = [j_min, p_min, theta_min];
+    Cparams.Thetas(t,:) = [j_min, theta_min, p_min];
 end
 
 end
