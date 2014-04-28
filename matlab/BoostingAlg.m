@@ -8,7 +8,6 @@ Nfeat = 1000;
 ys = [ones(Nf,1);zeros(Nnf,1)];
 ws = [1/(2*Nf)*ones(Nf,1);
     1/(2*Nnf)*ones(Nnf,1)];
-err_min = 1e100;
 fs_min = 0;
 theta_min = 0;
 p_min = 0;
@@ -26,6 +25,7 @@ for t = 1:T
     ws = ws/sum(ws);
     
     % TRAINING OF THE DIFFERENT WEAK CLASSIFIERS
+    err_min = 1e100;
     for j = 1:Nfeat
         fs = [Fdata.ii_ims; NFdata.ii_ims] * FTdata.fmat(:,j);
         [theta, p, err] = LearnWeakClassifier(ws, fs, ys);
