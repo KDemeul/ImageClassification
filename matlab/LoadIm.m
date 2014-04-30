@@ -3,7 +3,7 @@ function [im, ii_im] = LoadIm(im_fname)
 %   Detailed explanation goes here
 
 im = imread(im_fname);
-im = double(im);
+im = im2double(im);
 
 im_vec = im(:);
 
