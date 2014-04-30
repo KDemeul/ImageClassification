@@ -16,8 +16,8 @@ f = fmat'*ii_im_window(:);
 % Feature normalization
 features = Cparams.all_ftypes(ftypes,1);
 
-mu = ComputeBoxSum(ii_im,x,y,L,L)/L^2
-sigma = sqrt((ComputeBoxSum(ii_im_2,x,y,L,L)-(L*mu)^2)/(L^2-1))
+mu = ComputeBoxSum(ii_im,x,y,L,L)/L^2;
+sigma = sqrt((ComputeBoxSum(ii_im_2,x,y,L,L)-(L*mu)^2)/(L^2-1));
 for i=1:size(features)
     f(i) = f(i)/sigma;
     if features(i) == 3
