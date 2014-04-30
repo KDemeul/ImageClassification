@@ -6,12 +6,12 @@ p = Cparams.Thetas(:,3);
 alphas = Cparams.alphas;
 thetas = Cparams.Thetas(:,2);
 
-ii_im_window = ii_im(y:y+L,x:x+L);
+ii_im_window = ii_im(y:y+L-1,x:x+L-1);
 
 % Features evaluation
 ftypes = Cparams.Thetas(:,1);
 fmat = Cparams.fmat(:,ftypes);
-f = fmat'*ii_im_window;
+f = fmat'*ii_im_window(:);
 
 % Feature normalization
 features = Cparams.all_ftypes(ftypes,1);
