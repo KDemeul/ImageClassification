@@ -2,7 +2,7 @@ function DisplayDetections(im, dets)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 
-close all
+figure
 imagesc(im);
 hold on
 axis equal
@@ -10,7 +10,6 @@ axis equal
 for i=1:size(dets,1)
     r = rectangle('Position',dets(i,:));
     set(r,'EdgeColor', 'r');
-    
 end
 
 end

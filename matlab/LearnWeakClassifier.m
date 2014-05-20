@@ -13,10 +13,9 @@ epsilon_un = sum(ws.*abs(ys-double(fs<theta)));
 [~,indice_p] = min([epsilon_moins_un,epsilon_un]);
 if indice_p==1
     p = -1;
+    err = epsilon_moins_un;
 else
     p = 1;
+    err = epsilon_un;
 end
-
-err = sum(ws.*abs(ys-double(p*fs<p*theta)));
-
 end

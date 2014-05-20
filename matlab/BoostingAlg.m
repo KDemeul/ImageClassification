@@ -1,9 +1,14 @@
-function Cparams = BoostingAlg(Fdata, NFdata, FTdata, T)
+function Cparams = BoostingAlg(Fdata, NFdata, FTdata, T, debug)
 Nf = size(Fdata.ii_ims,1);
 Nnf = size(NFdata.ii_ims,1);
-Nfeat = size(FTdata.all_ftypes,1);
+if debug == 0
+    Nfeat = size(FTdata.all_ftypes,1);
+else
+    Nfeat = 1000;
+end
 
 %%%%%%%%%%%% INITIALIZATION %%%%%%%%%%%%
+Fs = [Fdata.ii_ims; NFdata.ii_ims] * FTdata.fmat;
 ys = [ones(Nf,1);zeros(Nnf,1)];
 ws = [1/(2*Nf)*ones(Nf,1);
     1/(2*Nnf)*ones(Nnf,1)];
@@ -26,7 +31,7 @@ for t = 1:T
     % TRAINING OF THE DIFFERENT WEAK CLASSIFIERS
     err_min = 1e100;
     for j = 1:Nfeat
-        fs = [Fdata.ii_ims; NFdata.ii_ims] * FTdata.fmat(:,j);
+        fs = Fs(:,j);
         [theta, p, err] = LearnWeakClassifier(ws, fs, ys);
         % FINDING THE LOWEST ERROR TRAINED CLASSIFIERS
         if err < err_min
