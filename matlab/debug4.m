@@ -4,7 +4,7 @@ clc
 
 profile on
 
-dirname = 'TrainingImages\FACES';
+dirname = 'TrainingImages/FACES';
 dinfo4 = load('DebugInfo/debuginfo4.mat');
 ni = dinfo4.ni;
 all_ftypes = dinfo4.all_ftypes;
