@@ -1,4 +1,4 @@
-function ComputeROC(Cparams, Fdata, NFdata)
+function threshold = ComputeROC(Cparams, Fdata, NFdata)
 %%%%%%%%%%%%% GETTING TEST IMAGES %%%%%%%%%%%%%
 % Find the indice of the not-used images
 dirfaces = 'TrainingImages/FACES';
@@ -58,9 +58,9 @@ axis equal
 plot(ROC(:,1),ROC(:,2));
 
 %%%%%%%%%%%%% FIND THRESHOLD %%%%%%%%%%%%%
-tpr_goal = 0.7;
+tpr_goal = 0.9;
 [~, ind] = min(abs(ROC(:,2)-tpr_goal));
-threshold = th_set(ind)
+threshold = th_set(ind);
 
 end
 

@@ -5,7 +5,7 @@ function LoadSaveImData(dirname, ni, im_sfn)
 
 % Load images
 face_fnames = dir(dirname);
-aa = 4:length(face_fnames);
+aa = 3:length(face_fnames);
 a = randperm(length(aa));
 fnums = aa(a(1:ni));
 
@@ -14,7 +14,6 @@ fnums = aa(a(1:ni));
 ii_ims = zeros(ni,size(ii_im,2)*size(ii_im,1));
 
 for i=1:ni
-    [[dirname,'/'],face_fnames(fnums(i)).name]
     [~,ii_im] = LoadIm([[dirname,'/'],face_fnames(fnums(i)).name]);
     ii_ims(i,:) = ii_im(:)';
 end
